@@ -1,0 +1,149 @@
+/* Mukta Font Import */
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@400;700;800&display=swap');
+
+/* Main Container */
+.vertical-recent-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: 'Mukta', sans-serif;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Post Wrapper */
+.vr-post {
+    margin-bottom: 40px; 
+    padding-bottom: 40px;
+    border-bottom: 5px solid #ff0000; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.vr-post:last-child { 
+    border-bottom: none; 
+}
+
+/* --- Headline Fix & Animation --- */
+/* .vr-post भित्रको h2 र a लाई !important दिएर साइज फिक्स गरिएको छ */
+.vr-post .vr-title {
+    font-size: 60px !important; 
+    font-weight: 800 !important;
+    line-height: 1.1 !important;
+    margin: 15px 0 !important;
+    color: #111 !important;
+    font-family: 'Mukta', sans-serif !important;
+}
+
+.vr-post .vr-title a { 
+    text-decoration: none !important; 
+    color: #111 !important; 
+    display: inline-block;
+    transition: all 0.3s ease-in-out; 
+}
+
+/* Hover Animation: रातो हुने र माथि उचालिने */
+.vr-post .vr-title a:hover {
+    color: #ff0000 !important;
+    transform: translateY(-5px);
+}
+
+/* Meta Info Inline */
+.vr-meta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.vr-author-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50% !important;
+    object-fit: cover;
+}
+
+.vr-meta-info {
+    font-size: 16px;
+    color: #555;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.vr-date {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #888;
+}
+
+/* Featured Image */
+.vr-image {
+    width: 100%;
+    max-width: 1200px;
+    margin-bottom: 25px;
+    overflow: hidden; /* जुम एनिमेसन बाहिर नजाओस् भनेर */
+    border-radius: 8px;
+}
+
+.vr-image img {
+    width: 100%;
+    height: auto;
+    max-height: 600px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+/* इमेजमा होभर गर्दा जुम हुने */
+.vr-image:hover img {
+    transform: scale(1.05);
+}
+
+/* Snippet Styling */
+.vr-snippet {
+    font-size: 19px;
+    line-height: 1.6;
+    color: #444;
+    max-width: 1100px;
+    margin: 0 auto 25px auto; 
+}
+
+/* Button Styling */
+.vr-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    color: #ffffff !important;
+    padding: 14px 40px;
+    font-size: 18px;
+    font-weight: 700;
+    text-decoration: none !important;
+    border-radius: 5px;
+    transition: 0.3s ease;
+    box-shadow: 0 4px 10px rgba(255, 0, 0, 0.2);
+}
+
+.vr-btn:hover {
+    background: #000 !important;
+    color: #fff !important;
+    transform: translateY(-2px);
+}
+
+/* --- Mobile Responsiveness --- */
+@media screen and (max-width: 768px) {
+    .vr-post .vr-title { 
+        font-size: 40px !important; /* मोबाइलमा ४० पिक्सेल */
+        line-height: 1.2 !important;
+    }
+    
+    .vr-snippet { 
+        font-size: 16px; 
+        padding: 0 10px; 
+    }
+
+    .vr-image img {
+        max-height: 350px;
+    }
+}
