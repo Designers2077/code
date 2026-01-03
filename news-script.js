@@ -44,6 +44,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // JSONP मार्फत डेटा लोड गर्ने
     const script = document.createElement('script');
-    script.src = "/feeds/posts/default?alt=json-in-script&max-results=5&callback=setupNews";
+    script.src = "https://nepalimahabani.blogspot.com/feeds/posts/default?alt=json-in-script&max-results=5&callback=setupNews";
     document.body.appendChild(script);
 });
