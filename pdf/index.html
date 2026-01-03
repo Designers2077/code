@@ -31,7 +31,7 @@
         // URL बाट PDF ID लिने (उदा: index.html?id=YOUR_ID)
         const urlParams = new URLSearchParams(window.location.search);
         const driveId = urlParams.get('id');
-        const pdfUrl = `https://cors-anywhere.herokuapp.com/https://drive.google.com/uc?export=download&id=${1adDJ9UxOLn5_LISDeqLNu5axexStp3uL}`;
+        const pdfUrl = `https://cors-anywhere.herokuapp.com/https://drive.google.com/uc?export=download&id=${driveId}`;
 
         pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.12.313/pdf.worker.min.js';
 
