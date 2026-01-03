@@ -1,0 +1,65 @@
+/* Breaking News Ticker Style */
+.ticker-wrapper {
+    background: #fceae9;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    height: 45px;
+    border-bottom: 1px solid #ddd;
+    font-family: 'Mukta', sans-serif;
+}
+
+.ticker-title {
+    background: #ff0000;
+    color: #fff;
+    padding: 0 20px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-weight: 800;
+    font-size: 14px;
+    z-index: 5;
+    white-space: nowrap;
+}
+
+.ticker-text-container {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.ticker-text {
+    display: inline-block;
+    white-space: nowrap;
+    padding-left: 100%;
+    animation: ticker-scroll 50s linear infinite; /* गति यहाँबाट मिलाउनुहोस् */
+    font-weight: 600;
+}
+
+.ticker-text span {
+    margin-right: 50px;
+}
+
+.ticker-text a {
+    color: #d32f2f;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.ticker-text a:hover {
+    color: #000;
+}
+
+/* Pause on Hover */
+.ticker-wrapper:hover .ticker-text {
+    animation-play-state: paused;
+}
+
+@keyframes ticker-scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+@media (max-width: 768px) {
+    .ticker-title { padding: 0 10px; font-size: 12px; }
+}
