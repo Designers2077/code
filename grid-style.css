@@ -1,0 +1,80 @@
+/* Project: Responsive News Grid
+   Layout: 4 Columns Desktop / 2 Columns Mobile
+   Font: Mukta (supports Nepali/Hindi & English)
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@400;700&display=swap');
+
+.post-grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 Columns for Desktop */
+    gap: 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 10px;
+    font-family: 'Mukta', sans-serif;
+}
+
+.grid-post {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.grid-image {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Makes images perfectly square */
+    overflow: hidden;
+    border-radius: 8px;
+    background-color: #f4f4f4;
+}
+
+.grid-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+/* Hover Zoom Effect */
+.grid-post:hover .grid-image img {
+    transform: scale(1.1);
+}
+
+.grid-title {
+    font-size: 20px; /* As per your design */
+    font-weight: 700;
+    line-height: 1.3;
+    margin: 12px 0 5px 0;
+    color: #111;
+}
+
+.grid-title a {
+    text-decoration: none;
+    color: inherit;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Limits title to 2 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.grid-title a:hover {
+    color: #e74c3c; /* Red color on hover */
+}
+
+/* --- Responsive Breakpoints --- */
+
+/* Tablet View (3 Columns) */
+@media screen and (max-width: 1024px) {
+    .post-grid-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Mobile View (2 Columns - Your specific request) */
+@media screen and (max-width: 768px) {
+    .post-grid-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 side-by-side on mobile */
+        gap: 12px;
+    }
