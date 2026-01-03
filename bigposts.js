@@ -12,10 +12,10 @@ function renderRecentVerticalPosts(json) {
             var link = post.link.find(l => l.rel === 'alternate').href;
             
             // इमेज साइज सुधार (७२पिक्सेल बाट १२०० पिक्सेलमा)
-            var img = post.media$thumbnail ? post.media$thumbnail.url.replace('s72-c', 's1200') : 'https://via.placeholder.com/1200x630';
+            var img = post.media$thumbnail ? post.media$thumbnail.url.replace('s600-c', 's1200') : 'https://via.placeholder.com/1200x630';
             
             var authorName = post.author[0].name.$t;
-            var authorImg = post.author[0].gd$image.src.replace('/s512-c/', '/s80-c/'); 
+            var authorImg = post.author[0].gd$image.src.replace('/s512-c/', '/s600-c/'); 
             
             // मिति नेपालीमा (ne-NP)
             var pubDate = new Date(post.published.$t).toLocaleDateString('ne-NP');
