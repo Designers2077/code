@@ -1,6 +1,6 @@
 /**
- * Blogger Related Posts Grid Script
- * Logic: Fetch posts from same label, skip current post, 4-column desktop/2-column mobile
+ * Blogger Related Posts Logic
+ * File: related-grid.js
  */
 
 function renderRelatedGrid(json) {
@@ -9,7 +9,7 @@ function renderRelatedGrid(json) {
     var html = '<div class="post-grid-container">';
 
     if (!entries || entries.length === 0) {
-        document.getElementById('related-grid-box').style.display = 'none';
+        document.getElementById('related-posts-section').style.display = 'none';
         return;
     }
 
@@ -18,7 +18,7 @@ function renderRelatedGrid(json) {
         var post = entries[i];
         var link = post.link.find(l => l.rel === 'alternate').href.split('?')[0].split('#')[0];
 
-        // Skip the post if it's the one currently being read
+        // Do not show the post the user is currently reading
         if (link === currentPostUrl) continue;
 
         var title = post.title.$t;
@@ -32,7 +32,7 @@ function renderRelatedGrid(json) {
         html += '</article>';
 
         count++;
-        if (count === 4) break; // Limit to 4 posts
+        if (count === 4) break; // Display only 4 posts
     }
 
     html += '</div>';
