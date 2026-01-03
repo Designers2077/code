@@ -12,8 +12,8 @@
 
 /* Post Wrapper */
 .vr-post {
-    margin-bottom: 40px; 
-    padding-bottom: 40px;
+    margin-bottom: 5px; 
+    padding-bottom: 5px;
     border-bottom: 5px solid #ff0000; 
     display: flex;
     flex-direction: column;
@@ -116,7 +116,7 @@
     display: inline-block;
     background: linear-gradient(135deg, #e74c3c, #c0392b);
     color: #ffffff !important;
-    padding: 14px 40px;
+    padding: 14px 14px;
     font-size: 18px;
     font-weight: 700;
     text-decoration: none !important;
