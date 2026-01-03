@@ -1,0 +1,48 @@
+/* Post Page Design by The Designers7 */
+.post-outer {
+    padding: 10px 0;
+    margin-bottom: 20px;
+}
+
+/* Post Title - Bold Mukta 36px */
+h1.entry-title {
+    font-family: 'Mukta', sans-serif;
+    font-size: 36px;
+    font-weight: 800;
+    line-height: 1.2;
+    color: #111;
+    margin: 15px 0;
+    padding-left: 15px;
+    border-left: 5px solid #ff0000; /* आकर्षक रातो किनारा */
+}
+
+/* Post Body Content */
+.post-body {
+    font-family: 'Mukta', sans-serif;
+    font-size: 20px; /* तपाईँले खोज्नुभएको २० पिक्सेल साइज */
+    line-height: 1.8;
+    color: #2c3e50;
+    text-align: justify;
+}
+
+/* Images inside Post */
+.post-body img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    margin: 20px 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Heading Tags inside Content */
+.post-body h2, .post-body h3 {
+    font-weight: 800;
+    margin: 30px 0 15px;
+    color: #000;
+}
+
+/* Mobile Adjustments */
+@media screen and (max-width: 768px) {
+    h1.entry-title { font-size: 28px; }
+    .post-body { font-size: 18px; }
+}
