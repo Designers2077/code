@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PDF Flipbook</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.12.313/pdf.min.js"></script>
+    <script src="https://cdn.rawgit.com/blasten/turn.js/master/lib/turn.min.js"></script>
+    <style>
+        body { background: #333; display: flex; justify-content: center; flex-direction: column; align-items: center; min-height: 100vh; margin: 0; }
+        #flipbook { display: none; margin: 20px; }
+        .page { background: white; width: 100%; height: 100%; }
+        .controls { position: fixed; bottom: 20px; z-index: 100; background: rgba(0,0,0,0.7); padding: 10px; border-radius: 20px; }
+        button { cursor: pointer; padding: 8px 15px; border: none; border-radius: 15px; background: #fff; margin: 0 5px; font-weight: bold; }
+        #loading { color: white; font-family: sans-serif; }
+    </style>
+</head>
+<body>
+
+    <div id="loading">पत्रिका लोड हुँदैछ...</div>
+    
+    <div id="flipbook"></div>
+
+    <div class="controls">
+        <button onclick="$('#flipbook').turn('previous')">अघिल्लो</button>
+        <button onclick="zoomIn()">Zoom In</button>
+        <button onclick="zoomOut()">Zoom Out</button>
+        <button onclick="$('#flipbook').turn('next')">अर्को</button>
+    </div>
+
+    <script>
+        // URL बाट PDF ID लिने (उदा: index.html?id=YOUR_ID)
+        const urlParams = new URLSearchParams(window.location.search);
+        const driveId = urlParams.get('id');
+        const pdfUrl = `https://cors-anywhere.herokuapp.com/https://drive.google.com/uc?export=download&id=${1adDJ9UxOLn5_LISDeqLNu5axexStp3uL}`;
+
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.12.313/pdf.worker.min.js';
+
+        let zoom = 1.5;
+
+        async function init() {
+            try {
+                const pdf = await pdfjsLib.getDocument(pdfUrl).promise;
+                for (let i = 1; i <= pdf.numPages; i++) {
+                    const page = await pdf.getPage(i);
+                    const viewport = page.getViewport({ scale: zoom });
+                    const canvas = document.createElement("canvas");
+                    const context = canvas.getContext("2d");
+                    canvas.height = viewport.height;
+                    canvas.width = viewport.width;
+                    await page.render({ canvasContext: context, viewport: viewport }).promise;
+                    
+                    const div = $('<div />').addClass('page').append($('<img />').attr('src', canvas.toDataURL("image/jpeg")).css('width', '100%'));
+                    $('#flipbook').append(div);
+                }
+                
+                $('#loading').hide();
+                $('#flipbook').show().turn({
+                    width: window.innerWidth * 0.9,
+                    height: window.innerHeight * 0.8,
+                    autoCenter: true,
+                    display: 'double'
+                });
+            } catch (e) {
+                $('#loading').text("गुगल ड्राइभले फाइल ब्लक गर्यो। कृपया सिधै गिटहबमा PDF राख्नुहोस्।");
+            }
+        }
+
+        function zoomIn() { zoom += 0.2; location.reload(); }
+        function zoomOut() { if(zoom > 1) zoom -= 0.2; location.reload(); }
+
+        if(driveId) init(); else $('#loading').text("फाइल ID भेटिएन।");
+    </script>
+</body>
+</html>
