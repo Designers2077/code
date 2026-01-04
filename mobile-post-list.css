@@ -1,0 +1,49 @@
+/* Mobile Responsive Label Posts */
+.custom-label-posts {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.custom-post-item {
+    display: flex;
+    align-items: flex-start; /* फोटो र शीर्षक माथिबाटै मिलून् */
+    gap: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px dashed #ddd;
+}
+
+.custom-post-thumb {
+    flex: 0 0 100px; /* मोबाइलका लागि अलि सानो फोटो */
+    height: 70px;
+}
+
+.custom-post-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.custom-post-title a {
+    font-size: 16px; /* मोबाइलमा पढ्न सजिलो साइज */
+    line-height: 1.3;
+    font-weight: 600;
+    color: #222;
+    text-decoration: none;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* ३ लाइन भन्दा बढी भए "..." देखिने */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* ट्याब्लेट वा ठूलो स्क्रिनका लागि */
+@media (min-width: 600px) {
+    .custom-post-thumb {
+        flex: 0 0 140px;
+        height: 90px;
+    }
+    .custom-post-title a {
+        font-size: 18px;
+    }
+}
