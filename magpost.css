@@ -4,45 +4,44 @@
 .header-container {
     display: flex;
     align-items: center;
-    margin-bottom: 20px;
+    margin: 20px 0;
     font-family: 'Mukta', sans-serif;
 }
 .line { flex: 1; height: 2px; background-color: #eee; }
 .title-pill {
-    background: #e31e24; /* रातो रङ */
+    background: #e31e24;
     color: #fff;
-    padding: 5px 20px;
-    font-weight: bold;
-    text-transform: uppercase;
+    padding: 4px 18px;
+    font-weight: 700;
     border-radius: 50px;
     margin: 0 10px;
 }
 
-/* Main Grid Wrapper */
+/* Main Layout Grid */
 #post-grid-box {
     display: grid;
-    grid-template-columns: 2fr 1.2fr;
+    grid-template-columns: 1.8fr 1.2fr; /* देब्रे ठूलो, दाहिने लिस्ट */
     gap: 20px;
     font-family: 'Mukta', sans-serif;
 }
 
-.left-section { display: flex; flex-direction: column; gap: 20px; }
-.bottom-two-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
-.right-section { display: flex; flex-direction: column; gap: 15px; border-left: 1px solid #eee; padding-left: 15px; }
+.left-column { display: flex; flex-direction: column; gap: 15px; }
+.bottom-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
 
-/* Card Styles */
-.grid-card { background: #fff; overflow: hidden; }
-.grid-card a { text-decoration: none; color: #111; }
-.grid-card img { width: 100%; object-fit: cover; border-radius: 5px; display: block; }
+/* Card Styling */
+.card { overflow: hidden; }
+.card a { text-decoration: none; color: #111; }
+.card img { width: 100%; object-fit: cover; border-radius: 4px; display: block; }
 
-.main-post img { height: 350px; }
-.sub-post img { height: 180px; }
+.main-item img { height: 320px; }
+.grid-item img { height: 160px; }
 
-/* Right List Item */
-.list-item { display: grid; grid-template-columns: 100px 1fr; gap: 10px; align-items: center; padding-bottom: 10px; border-bottom: 1px solid #f9f9f9; }
-.list-item img { width: 100px; height: 70px; border-radius: 4px; }
+/* Right Column List Style */
+.right-column { display: flex; flex-direction: column; gap: 12px; }
+.list-item { display: grid; grid-template-columns: 100px 1fr; gap: 12px; align-items: center; }
+.list-item img { width: 100px; height: 75px; border-radius: 4px; }
 
-/* Headline - 20px Bold */
+/* Headlines: 20px Bold, 2 lines max */
 .headline {
     font-size: 20px;
     font-weight: 700;
@@ -53,11 +52,13 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
+
 .list-item .headline { font-size: 16px; margin: 0; }
 
-/* Responsive */
-@media (max-width: 850px) {
-    #post-grid-box { grid-template-columns: 1fr; }
-    .right-section { border-left: none; padding-left: 0; }
-    .bottom-two-grid { grid-template-columns: 1fr 1fr; } /* मोबाइलमा २ कोलम */
+/* Mobile Responsibility */
+@media (max-width: 768px) {
+    #post-grid-box { grid-template-columns: 1fr; } /* मोबाइलमा एक कोलम */
+    .bottom-grid { grid-template-columns: 1fr 1fr; gap: 10px; } /* मुनिको ग्रिड २ कोलममै रहने */
+    .main-item img { height: 220px; }
+    .headline { font-size: 18px; }
 }
