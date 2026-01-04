@@ -9,22 +9,19 @@
     text-align: center;
 }
 
-/* Post Wrapper with 5px RED Border */
+/* Post Wrapper with Red Border */
 .vr-post {
-    margin-bottom: 5px; 
-    padding-bottom: 5px;
-    border-bottom: 5px solid #ff0000; /* 5px मोटो रातो बोर्डर */
+    margin-bottom: 25px; 
+    padding-bottom: 25px;
+    border-bottom: 5px solid #ff0000;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-/* अन्तिम पोस्टमा बोर्डर हटाउन */
-.vr-post:last-child { 
-    border-bottom: none; 
-}
+.vr-post:last-child { border-bottom: none; }
 
-/* Headline - 60px Center Desktop, 40px Mobile */
+/* Headline - Responsive Sizes */
 .vr-title {
     font-size: 60px;
     font-weight: 800;
@@ -32,10 +29,9 @@
     margin: 0 0 15px 0;
     color: #111;
 }
-
 .vr-title a { text-decoration: none; color: inherit; }
 
-/* Meta Info Inline */
+/* Meta Info */
 .vr-meta {
     display: flex;
     align-items: center;
@@ -43,50 +39,26 @@
     gap: 12px;
     margin-bottom: 25px;
 }
+.vr-author-img { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; }
+.vr-meta-info { font-size: 16px; color: #555; display: flex; align-items: center; gap: 15px; }
+.vr-date { display: flex; align-items: center; gap: 5px; color: #888; }
 
-.vr-author-img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-.vr-meta-info {
-    font-size: 16px;
-    color: #555;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.vr-date {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    color: #888;
-}
-
-/* Featured Image (1200px) */
+/* FIX: High Resolution Full Image */
 .vr-image {
     width: 100%;
     max-width: 1200px;
-    margin-left: auto; /* सेन्टरमा राख्न */
-    margin-right: auto;
     margin-bottom: 25px;
 }
-
 .vr-image img {
     width: 100%;
-    height: auto; 
-    /* यदि फोटो धेरै लामो भएर स्क्रिन ढाक्यो भने मात्र max-height राख्नुहोस् */
-    /* max-height: 600px; */ 
-    object-fit: contain; /* यसले फोटोलाई नकाटी पूरै देखाउँछ */
+    height: auto;
+    /* Removed max-height to ensure full visibility of vertical/large images */
+    object-fit: contain; 
     border-radius: 8px;
     display: block;
 }
 
-
-/* Snippet Styling (Tight Gaps) */
+/* Snippet Styling */
 .vr-snippet {
     font-size: 19px;
     line-height: 1.6;
@@ -95,12 +67,12 @@
     margin: 0 auto 25px auto; 
 }
 
-/* Attractive Red Button */
+/* Red Button Styling */
 .vr-btn {
     display: inline-block;
     background: linear-gradient(135deg, #e74c3c, #c0392b);
     color: #ffffff;
-    padding: 14px 14px;
+    padding: 14px 28px;
     font-size: 18px;
     font-weight: 700;
     text-decoration: none;
@@ -108,15 +80,11 @@
     transition: 0.3s ease;
     box-shadow: 0 4px 10px rgba(255, 0, 0, 0.2);
 }
+.vr-btn:hover { background: #000; color: #fff; transform: translateY(-2px); }
 
-.vr-btn:hover {
-    background: #000;
-    color: #fff;
-    transform: translateY(-2px);
-}
-
-/* Mobile Responsiveness */
+/* Mobile View Adjustments */
 @media screen and (max-width: 768px) {
-    .vr-title { font-size: 40px; }
+    .vr-title { font-size: 36px; }
     .vr-snippet { font-size: 16px; padding: 0 10px; }
+    .vr-btn { width: 80%; }
 }
