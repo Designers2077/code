@@ -1,20 +1,26 @@
+/* Mukta Font Import */
 @import url('https://fonts.googleapis.com/css2?family=Mukta:wght@400;700&display=swap');
 
-/* Header Style */
+/* Header Style - ताजा समाचार पट्टी */
 .magpost-header {
     display: flex;
     align-items: center;
     margin: 20px 0;
     font-family: 'Mukta', sans-serif;
 }
-.magpost-line { flex: 1; height: 2px; background-color: #eee; }
+.magpost-line { 
+    flex: 1; 
+    height: 2px; 
+    background-color: #eee; 
+}
 .magpost-pill {
-    background: #e31e24;
+    background: #e31e24; /* News Red Color */
     color: #fff;
     padding: 4px 18px;
     font-weight: 700;
     border-radius: 50px;
     margin: 0 10px;
+    font-size: 16px;
 }
 
 /* Main Layout Grid */
@@ -25,40 +31,51 @@
     font-family: 'Mukta', sans-serif;
 }
 
-.magpost-left { display: flex; flex-direction: column; gap: 15px; }
-.magpost-bottom-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+.magpost-left { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 15px; 
+}
+.magpost-bottom-grid { 
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    gap: 15px; 
+}
 
-/* Card Styling */
+/* Card & Link Styles */
 .mag-card { overflow: hidden; }
-.mag-card a { text-decoration: none; color: #111; }
-.mag-card img { width: 100%; object-fit: cover; border-radius: 4px; display: block; }
 
+/* Underline हटाउन यहाँ 'text-decoration: none' राखिएको छ */
+.mag-card a, .mag-list-item a { 
+    text-decoration: none !important; 
+    color: #111; 
+    display: block;
+}
+
+.mag-card img { 
+    width: 100%; 
+    object-fit: cover; 
+    border-radius: 4px; 
+    display: block; 
+    transition: 0.3s ease;
+}
+
+.mag-card:hover img {
+    opacity: 0.9;
+}
+
+/* Image Heights - Desktop */
 .mag-main-item img { height: 320px; }
 .mag-grid-item img { height: 160px; }
 
 /* Right Column List Style */
-.magpost-right { display: flex; flex-direction: column; gap: 12px; }
-.mag-list-item { display: grid; grid-template-columns: 100px 1fr; gap: 12px; align-items: center; }
-.mag-list-item img { width: 100px; height: 75px; border-radius: 4px; }
-
-/* Headline: 20px Bold */
-.mag-headline {
-    font-size: 20px;
-    font-weight: 700;
-    margin: 8px 0;
-    line-height: 1.3;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+.magpost-right { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 12px; 
 }
-
-.mag-list-item .mag-headline { font-size: 16px; margin: 0; }
-
-/* Mobile Responsibility */
-@media (max-width: 768px) {
-    #magpost-grid-box { grid-template-columns: 1fr; }
-    .magpost-bottom-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
-    .mag-main-item img { height: 220px; }
-    .mag-headline { font-size: 18px; }
-}
+.mag-list-item { 
+    display: grid; 
+    grid-template-columns: 100px 1fr; 
+    gap: 12px; 
+    align
