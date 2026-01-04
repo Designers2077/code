@@ -1,38 +1,23 @@
-/* List Post Container */
-#listpost-grid-box {
-    font-family: 'Mukta', sans-serif;
-    max-width: 100%;
-    margin: 0 auto;
-}
 
 /* Individual Item */
 .listpost-item {
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
+    /* यसले भित्रका सबै सामग्री (फोटो र शीर्षक) लाई ठाडो रूपमा बीचमा राख्छ */
+    align-items: center; 
     padding: 12px 0;
     border-bottom: 1px solid #eeeeee;
     gap: 15px;
-}
-
-/* Image Styling */
-.listpost-thumb {
-    flex: 0 0 130px;
-    width: 130px;
-    height: 85px;
-    overflow: hidden;
-}
-
-.listpost-thumb img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 4px;
+    min-height: 85px; /* फोटोको उचाई जति नै राख्नुस् */
 }
 
 /* Content Styling */
 .listpost-info {
     flex: 1;
+    /* यसले शीर्षकलाई सधैं माथिबाट तलको बीचमा धकेल्छ */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
 }
 
 .listpost-title {
@@ -47,20 +32,4 @@
     line-height: 1.3;
     text-decoration: none;
     display: block;
-}
-
-.listpost-title a:hover {
-    color: #d32f2f; /* समाचार पोर्टल जस्तै रातो होभर */
-}
-
-/* Mobile Adjustments */
-@media screen and (max-width: 480px) {
-    .listpost-thumb {
-        flex: 0 0 115px;
-        width: 115px;
-        height: 75px;
-    }
-    .listpost-title a {
-        font-size: 17px;
-    }
 }
