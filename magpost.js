@@ -1,11 +1,11 @@
-function renderGridPosts(json) {
+function renderMagPosts(json) {
     var entries = json.feed.entry;
-    var container = document.getElementById('post-grid-box');
+    var container = document.getElementById('magpost-grid-box');
     if (!entries) { container.innerHTML = "Post not found!"; return; }
 
-    var leftSection = '<div class="left-column">';
-    var rightSection = '<div class="right-column">';
-    var subGrid = '<div class="bottom-grid">';
+    var leftSection = '<div class="magpost-left">';
+    var rightSection = '<div class="magpost-right">';
+    var subGrid = '<div class="magpost-bottom-grid">';
 
     for (var i = 0; i < entries.length; i++) {
         var entry = entries[i];
@@ -14,24 +14,24 @@ function renderGridPosts(json) {
         var img = entry.media$thumbnail ? entry.media$thumbnail.url.replace('s72-c', 'w600-h400-c') : 'https://via.placeholder.com/600x400';
 
         if (i === 0) {
-            // १. पहिलो ठूलो समाचार
-            leftSection += `<div class="card main-item"><a href="${link}"><img src="${img}"><h2 class="headline">${title}</h2></a></div>`;
+            // First Main Post
+            leftSection += `<div class="mag-card mag-main-item"><a href="${link}"><img src="${img}"><h2 class="mag-headline">${title}</h2></a></div>`;
         } else if (i === 1 || i === 2) {
-            // २. र ३. मुनिका ग्रिड समाचारहरू
-            subGrid += `<div class="card grid-item"><a href="${link}"><img src="${img}"><h2 class="headline">${title}</h2></a></div>`;
+            // Sub 2 Grid Posts
+            subGrid += `<div class="mag-card mag-grid-item"><a href="${link}"><img src="${img}"><h2 class="mag-headline">${title}</h2></a></div>`;
         } else {
-            // ४-९. दाहिने पट्टिका लिस्ट समाचारहरू
+            // Right Side List
             rightSection += `
-                <div class="list-item">
+                <div class="mag-list-item">
                     <a href="${link}"><img src="${img}"></a>
-                    <a href="${link}"><h2 class="headline">${title}</h2></a>
+                    <a href="${link}"><h2 class="mag-headline">${title}</h2></a>
                 </div>`;
         }
     }
 
-    subGrid += '</div>'; // close bottom-grid
-    leftSection += subGrid + '</div>'; // close left-column
-    rightSection += '</div>'; // close right-column
+    subGrid += '</div>'; 
+    leftSection += subGrid + '</div>'; 
+    rightSection += '</div>'; 
 
     container.innerHTML = leftSection + rightSection;
 }
