@@ -1,14 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Mukta:wght@400;700&display=swap');
 
 /* Header Style */
-.header-container {
+.magpost-header {
     display: flex;
     align-items: center;
     margin: 20px 0;
     font-family: 'Mukta', sans-serif;
 }
-.line { flex: 1; height: 2px; background-color: #eee; }
-.title-pill {
+.magpost-line { flex: 1; height: 2px; background-color: #eee; }
+.magpost-pill {
     background: #e31e24;
     color: #fff;
     padding: 4px 18px;
@@ -18,31 +18,31 @@
 }
 
 /* Main Layout Grid */
-#post-grid-box {
+#magpost-grid-box {
     display: grid;
-    grid-template-columns: 1.8fr 1.2fr; /* देब्रे ठूलो, दाहिने लिस्ट */
+    grid-template-columns: 1.8fr 1.2fr;
     gap: 20px;
     font-family: 'Mukta', sans-serif;
 }
 
-.left-column { display: flex; flex-direction: column; gap: 15px; }
-.bottom-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+.magpost-left { display: flex; flex-direction: column; gap: 15px; }
+.magpost-bottom-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
 
 /* Card Styling */
-.card { overflow: hidden; }
-.card a { text-decoration: none; color: #111; }
-.card img { width: 100%; object-fit: cover; border-radius: 4px; display: block; }
+.mag-card { overflow: hidden; }
+.mag-card a { text-decoration: none; color: #111; }
+.mag-card img { width: 100%; object-fit: cover; border-radius: 4px; display: block; }
 
-.main-item img { height: 320px; }
-.grid-item img { height: 160px; }
+.mag-main-item img { height: 320px; }
+.mag-grid-item img { height: 160px; }
 
 /* Right Column List Style */
-.right-column { display: flex; flex-direction: column; gap: 12px; }
-.list-item { display: grid; grid-template-columns: 100px 1fr; gap: 12px; align-items: center; }
-.list-item img { width: 100px; height: 75px; border-radius: 4px; }
+.magpost-right { display: flex; flex-direction: column; gap: 12px; }
+.mag-list-item { display: grid; grid-template-columns: 100px 1fr; gap: 12px; align-items: center; }
+.mag-list-item img { width: 100px; height: 75px; border-radius: 4px; }
 
-/* Headlines: 20px Bold, 2 lines max */
-.headline {
+/* Headline: 20px Bold */
+.mag-headline {
     font-size: 20px;
     font-weight: 700;
     margin: 8px 0;
@@ -53,12 +53,12 @@
     overflow: hidden;
 }
 
-.list-item .headline { font-size: 16px; margin: 0; }
+.mag-list-item .mag-headline { font-size: 16px; margin: 0; }
 
 /* Mobile Responsibility */
 @media (max-width: 768px) {
-    #post-grid-box { grid-template-columns: 1fr; } /* मोबाइलमा एक कोलम */
-    .bottom-grid { grid-template-columns: 1fr 1fr; gap: 10px; } /* मुनिको ग्रिड २ कोलममै रहने */
-    .main-item img { height: 220px; }
-    .headline { font-size: 18px; }
+    #magpost-grid-box { grid-template-columns: 1fr; }
+    .magpost-bottom-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+    .mag-main-item img { height: 220px; }
+    .mag-headline { font-size: 18px; }
 }
