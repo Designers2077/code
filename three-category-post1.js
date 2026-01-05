@@ -3,8 +3,8 @@ function renderCategory(json, targetId) {
     var posts = json.feed.entry || [];
     var target = document.getElementById(targetId);
 
-    if (posts.length === 0) {
-        target.innerHTML = "पोष्ट फेला परेन।";
+    if (!posts || posts.length === 0) {
+        target.innerHTML = "<div style='padding:10px;font-size:14px;'>यो लेबलमा कुनै समाचार भेटिएन।</div>";
         return;
     }
 
@@ -30,16 +30,17 @@ function cb1(json) { renderCategory(json, "box-1"); }
 function cb2(json) { renderCategory(json, "box-2"); }
 function cb3(json) { renderCategory(json, "box-3"); }
 
+// नेपाली लेबल लोड गर्ने मुख्य फंक्सन
 function loadThreeCats(cat1, cat2, cat3, count) {
-    var s1 = document.createElement('script');
-    s1.src = '/feeds/posts/default/-/' + encodeURIComponent(cat1) + '?alt=json-in-script&callback=cb1&max-results=' + count;
-    document.body.appendChild(s1);
+    var cats = [cat1, cat2, cat3];
+    var callbacks = [cb1, cb2, cb3];
 
-    var s2 = document.createElement('script');
-    s2.src = '/feeds/posts/default/-/' + encodeURIComponent(cat2) + '?alt=json-in-script&callback=cb2&max-results=' + count;
-    document.body.appendChild(s2);
-
-    var s3 = document.createElement('script');
-    s3.src = '/feeds/posts/default/-/' + encodeURIComponent(cat3) + '?alt=json-in-script&callback=cb3&max-results=' + count;
-    document.body.appendChild(s3);
+    for (var i = 0; i < cats.length; i++) {
+        if (cats[i]) {
+            var script = document.createElement('script');
+            // encodeURIComponent ले नेपाली शब्दलाई URL मा बुझ्ने बनाउँछ
+            script.src = '/feeds/posts/default/-/' + encodeURIComponent(cats[i]) + '?alt=json-in-script&callback=' + 'cb' + (i+1) + '&max-results=' + count;
+            document.body.appendChild(script);
+        }
+    }
 }
