@@ -1,3 +1,8 @@
+/*
+ * File Name: headlines-with-post-section.css
+ * Description: 10 Headlines with numbering (Left) and Main News Feature (Right)
+ */
+
 @import url('https://fonts.googleapis.com/css2?family=Mukta:wght@400;700&display=swap');
 
 .mn-headline-container {
@@ -10,12 +15,13 @@
     width: 100%;
 }
 
-/* हेडलाइन्स सेक्सन (बायाँ) */
+/* --- बायाँ खण्ड: हेडलाइन्स लिस्ट (30% Width approx) --- */
 .mn-headline-left {
     flex: 1;
     min-width: 280px;
 }
 
+/* हेडलाइन र मुख्य समाचारको टाइटल बक्स (हरियो धर्का र रातो अक्षर) */
 .mn-header-box {
     display: flex;
     align-items: center;
@@ -32,26 +38,31 @@
 
 .mn-header-box span {
     padding: 0 15px;
-    color: #cc0000;
+    color: #cc0000; /* रातो रङ */
     font-size: 22px;
     font-weight: bold;
 }
 
-/* नम्बर सहितको हेडलाइन */
+/* हेडलाइन आइटम स्टाइल */
 .mn-list-item {
     border-bottom: 1px solid #ddd;
-    padding: 12px 0;
+    padding: 10px 0;
     display: flex;
     align-items: flex-start;
     gap: 12px;
 }
 
+.mn-list-item:last-child {
+    border-bottom: none;
+}
+
+/* रातो गोलो घेरा भित्रको नेपाली नम्बर */
 .mn-number {
-    background: #cc0000; /* रातो ब्याकग्राउण्ड */
+    background: #cc0000;
     color: #fff;
     min-width: 28px;
     height: 28px;
-    border-radius: 50%; /* गोलो घेरा */
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -61,25 +72,33 @@
     margin-top: 2px;
 }
 
+/* हेडलाइन टाइटल: अधिकतम २ लाइनमा सीमित */
 .mn-list-item a {
     text-decoration: none;
     color: #333;
     font-size: 18px;
     line-height: 1.4;
     font-weight: 500;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;    /* २ लाइन मात्र देखाउने */
+    -webkit-box-orient: vertical;
+    overflow: hidden;         /* बढी भएको टेक्स्ट लुकाउने */
+    text-overflow: ellipsis;  /* अन्त्यमा ... देखाउने */
 }
 
-/* मुख्य समाचार (दायाँ) */
+/* --- दायाँ खण्ड: मुख्य समाचार (70% Width approx) --- */
 .mn-feature-right {
     flex: 2.2;
     min-width: 320px;
 }
 
+/* मुख्य ठूलो समाचार */
 .mn-main-card img {
     width: 100%;
     height: 380px;
     object-fit: cover;
     border: 1px solid #ddd;
+    border-radius: 4px;
 }
 
 .mn-main-card h2 {
@@ -89,6 +108,12 @@
     line-height: 1.2;
 }
 
+.mn-main-card a {
+    text-decoration: none;
+    color: #222;
+}
+
+/* साना २ वटा समाचारको ग्रिड */
 .mn-sub-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -97,9 +122,10 @@
 
 .mn-sub-card img {
     width: 100%;
-    height: 150px;
+    height: 160px;
     object-fit: cover;
     border: 1px solid #ddd;
+    border-radius: 4px;
 }
 
 .mn-sub-card h3 {
@@ -109,9 +135,40 @@
     font-weight: bold;
 }
 
-.mn-headline-container a:hover { color: #cc0000; }
+.mn-sub-card a {
+    text-decoration: none;
+    color: #333;
+}
 
+/* Hover Effect */
+.mn-headline-container a:hover {
+    color: #cc0000;
+}
+
+/* --- मोबाइल रेस्पोन्सिभ (Mobile Responsive) --- */
 @media (max-width: 800px) {
-    .mn-headline-container { flex-direction: column; }
-    .mn-main-card img { height: 220px; }
+    .mn-headline-container {
+        flex-direction: column; /* मोबाइलमा हेडलाइन माथि र समाचार तल हुनेछ */
+    }
+    
+    .mn-main-card img {
+        height: 220px;
+    }
+    
+    .mn-main-card h2 {
+        font-size: 22px;
+    }
+
+    .mn-sub-grid {
+        grid-template-columns: repeat(2, 1fr); /* मोबाइलमा पनि २ कोलम रहनेछ */
+        gap: 10px;
+    }
+
+    .mn-sub-card img {
+        height: 110px;
+    }
+
+    .mn-sub-card h3 {
+        font-size: 16px;
+    }
 }
