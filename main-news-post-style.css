@@ -1,0 +1,99 @@
+/* Mukta Font Import */
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@700&display=swap');
+
+.main-news-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    font-family: 'Mukta', sans-serif;
+    margin: 20px 0;
+    width: 100%;
+}
+
+.main-news-column {
+    flex: 1;
+    min-width: 320px;
+    background: #fff;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+/* बायाँतर्फ रातो बक्स टाइटल */
+.main-news-header {
+    border-bottom: 2px solid #cc0000;
+    margin-bottom: 15px;
+    display: flex;
+}
+
+.main-news-pill {
+    background: #cc0000;
+    color: #fff;
+    padding: 4px 15px;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* ग्रिड संरचना: मोबाइलमा पनि २ कोलम */
+.main-news-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.main-news-item {
+    display: flex;
+    flex-direction: column;
+}
+
+/* मुख्य समाचार (पहिलो पोष्ट) - ठूलो इमेज */
+.main-news-item:first-child {
+    grid-column: span 2;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.main-news-item:first-child img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.main-news-item:first-child a {
+    font-size: 22px;
+    line-height: 1.25;
+    margin-top: 10px;
+}
+
+/* साना समाचार (तलका २ कोलम) */
+.main-news-item:not(:first-child) img {
+    height: 110px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.main-news-item a {
+    font-size: 18px;
+    font-weight: bold;
+    color: #222;
+    text-decoration: none;
+    line-height: 1.2;
+    margin-top: 8px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* हेडलाइन २ लाइन मात्र */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.main-news-item a:hover { color: #cc0000; }
+
+/* मोबाइल रेस्पोन्सिभ */
+@media (max-width: 600px) {
+    .main-news-column { min-width: 100%; }
+    .main-news-item:first-child img { height: 180px; }
+    .main-news-item:not(:first-child) img { height: 100px; }
+    .main-news-item a { font-size: 17px; }
+}
