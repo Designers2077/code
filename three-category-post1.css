@@ -4,29 +4,28 @@
 .mag-wrapper {
     display: flex;
     flex-wrap: wrap;
-    gap: 25px;
+    gap: 20px;
     font-family: 'Mukta', sans-serif;
     margin: 20px 0;
     width: 100%;
+    clear: both;
 }
 
 .category-column {
     flex: 1;
-    min-width: 300px; /* मोबाइलमा १ कोलममा झर्नको लागि */
+    min-width: 300px;
 }
 
-/* हेडलाइन र लाइन डिजाइन (Pill Style) */
+/* हेडलाइन र पिल डिजाइन */
 .magpost-header {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
 }
-
 .magpost-line {
     flex: 1;
     border-bottom: 2px solid #333;
 }
-
 .magpost-pill {
     padding: 5px 15px;
     background: #000;
@@ -49,15 +48,14 @@
 }
 
 .mag-item img {
-    width: 100px;
-    min-width: 100px;
-    height: 70px;
+    width: 110px;
+    min-width: 110px;
+    height: 75px;
     object-fit: cover;
     border: 2px solid #cc0000;
     border-radius: 4px;
 }
 
-/* हेडलाइन: २० पिक्सेल, बोल्ड, २ लाइन मात्र */
 .mag-item a {
     font-size: 20px;
     font-weight: bold;
@@ -75,9 +73,7 @@
     color: #000;
 }
 
-/* मोबाइल रेस्पोन्सिभ सेटिङ */
+/* मोबाइल रेस्पोन्सिभ */
 @media (max-width: 600px) {
     .category-column { min-width: 100%; }
-    .mag-item a { font-size: 18px; }
-    .mag-item img { width: 90px; min-width: 90px; height: 65px; }
 }
