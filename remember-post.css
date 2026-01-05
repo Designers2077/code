@@ -1,0 +1,68 @@
+/* Remember Post Slide-in Box */
+#remember-post-container {
+  position: fixed;
+  bottom: -250px; /* सुरुमा लुकेको */
+  right: 20px;
+  width: 320px;
+  background: #ffffff;
+  border-top: 4px solid #d32f2f;
+  box-shadow: 0 -5px 20px rgba(0,0,0,0.15);
+  padding: 15px;
+  transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  z-index: 99999;
+  border-radius: 8px 8px 0 0;
+  font-family: sans-serif;
+}
+
+#remember-post-container.show {
+  bottom: 0px; /* स्क्रोल गर्दा देखा पर्ने */
+}
+
+#remember-post-container .close-remember {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 22px;
+  color: #888;
+  line-height: 1;
+}
+
+#remember-post-container .remember-title {
+  margin: 0 0 12px 0;
+  font-size: 16px;
+  color: #d32f2f;
+  font-weight: bold;
+  padding-right: 20px;
+  display: block;
+}
+
+#remember-post-container .remember-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+#remember-post-container .remember-img {
+  width: 90px;
+  height: 65px;
+  object-fit: cover;
+  border-radius: 4px;
+  background: #f0f0f0;
+}
+
+#remember-post-container .remember-link {
+  text-decoration: none;
+  color: #222;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+#remember-post-container .remember-link:hover {
+  color: #0056b3;
+}
