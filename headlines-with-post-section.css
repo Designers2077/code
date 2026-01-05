@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@400;700&display=swap');
+
+.mn-headline-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    font-family: 'Mukta', sans-serif;
+    margin: 20px 0;
+    background: #fff;
+    width: 100%;
+}
+
+/* हेडलाइन्स सेक्सन (बायाँ) */
+.mn-headline-left {
+    flex: 1;
+    min-width: 280px;
+}
+
+.mn-header-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.mn-header-box::before, .mn-header-box::after {
+    content: "";
+    flex: 1;
+    height: 2px;
+    background: #4caf50; /* हरियो धर्का */
+}
+
+.mn-header-box span {
+    padding: 0 15px;
+    color: #cc0000;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* नम्बर सहितको हेडलाइन */
+.mn-list-item {
+    border-bottom: 1px solid #ddd;
+    padding: 12px 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.mn-number {
+    background: #cc0000; /* रातो ब्याकग्राउण्ड */
+    color: #fff;
+    min-width: 28px;
+    height: 28px;
+    border-radius: 50%; /* गोलो घेरा */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: bold;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.mn-list-item a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    line-height: 1.4;
+    font-weight: 500;
+}
+
+/* मुख्य समाचार (दायाँ) */
+.mn-feature-right {
+    flex: 2.2;
+    min-width: 320px;
+}
+
+.mn-main-card img {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+    border: 1px solid #ddd;
+}
+
+.mn-main-card h2 {
+    font-size: 28px;
+    font-weight: bold;
+    margin: 15px 0;
+    line-height: 1.2;
+}
+
+.mn-sub-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.mn-sub-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border: 1px solid #ddd;
+}
+
+.mn-sub-card h3 {
+    font-size: 18px;
+    margin-top: 8px;
+    line-height: 1.3;
+    font-weight: bold;
+}
+
+.mn-headline-container a:hover { color: #cc0000; }
+
+@media (max-width: 800px) {
+    .mn-headline-container { flex-direction: column; }
+    .mn-main-card img { height: 220px; }
+}
