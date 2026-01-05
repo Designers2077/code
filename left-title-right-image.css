@@ -1,55 +1,58 @@
 /* Mukta Font Import */
 @import url('https://fonts.googleapis.com/css2?family=Mukta:wght@700&display=swap');
 
-.left-title-right-image-wrapper {
+.ltr-main-wrapper {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     font-family: 'Mukta', sans-serif;
-    margin: 20px 0;
+    margin: 25px 0;
     width: 100%;
 }
 
-.left-title-right-image-column {
+.ltr-column {
     flex: 1;
     min-width: 300px;
     background: #fff;
+    padding: 10px;
+    border: 1px solid #e0e0e0; /* बक्स जस्तो देखाउन */
+    border-radius: 5px;
     box-sizing: border-box;
 }
 
 /* क्याटगरी टाइटल: बायाँतर्फ रातो बक्स */
-.left-title-right-image-header {
+.ltr-header {
     border-bottom: 2px solid #cc0000;
     margin-bottom: 15px;
     display: flex;
     justify-content: flex-start;
 }
 
-.left-title-right-image-pill {
+.ltr-pill {
     background: #cc0000;
     color: #fff;
-    padding: 5px 15px;
+    padding: 4px 15px;
     font-size: 18px;
     font-weight: bold;
     display: inline-block;
 }
 
-/* पोष्ट आइटम: फोटो बायाँ, टाइटल दायाँ */
-.left-title-right-image-item {
+/* पोष्ट आइटम: फोटो बायाँ र टाइटल दायाँ */
+.ltr-post-item {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     gap: 12px;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
     padding-bottom: 10px;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #f2f2f2;
 }
 
-.left-title-right-image-item:last-child {
+.ltr-post-item:last-child {
     border-bottom: none;
 }
 
-.left-title-right-image-item img {
+.ltr-post-item img {
     width: 110px;
     min-width: 110px;
     height: 75px;
@@ -59,10 +62,10 @@
 }
 
 /* हेडलाइन दायाँतर्फ: २०px, बोल्ड */
-.left-title-right-image-item a {
-    font-size: 20px;
+.ltr-post-item a {
+    font-size: 19px;
     font-weight: bold;
-    color: #333;
+    color: #222;
     text-decoration: none;
     line-height: 1.2;
     display: -webkit-box;
@@ -71,12 +74,12 @@
     overflow: hidden;
 }
 
-.left-title-right-image-item a:hover {
+.ltr-post-item a:hover {
     color: #cc0000;
 }
 
 /* मोबाइल रेस्पोन्सिभ */
-@media (max-width: 600px) {
-    .left-title-right-image-column { min-width: 100%; }
-    .left-title-right-image-item a { font-size: 19px; }
+@media (max-width: 768px) {
+    .ltr-column { min-width: 100%; }
+    .ltr-post-item a { font-size: 18px; }
 }
