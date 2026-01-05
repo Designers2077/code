@@ -4,7 +4,7 @@ function ltrRender(json, targetId) {
     var target = document.getElementById(targetId);
 
     if (!posts || posts.length === 0) {
-        target.innerHTML = "<div style='font-size:14px;color:#999;'>समाचार भेटिएन।</div>";
+        target.innerHTML = "<div style='padding:10px;color:#999;'>समाचार भेटिएन।</div>";
         return;
     }
 
@@ -25,12 +25,11 @@ function ltrRender(json, targetId) {
     target.innerHTML = html;
 }
 
-// कलव्याकहरू
-function ltrCB1(json) { ltrRender(json, "ltr-box-1"); }
-function ltrCB2(json) { ltrRender(json, "ltr-box-2"); }
-function ltrCB3(json) { ltrRender(json, "ltr-box-3"); }
+// अलग-अलग कलव्याक फंक्सनहरू
+window.ltrCB1 = function(json) { ltrRender(json, "ltr-box-1"); };
+window.ltrCB2 = function(json) { ltrRender(json, "ltr-box-2"); };
+window.ltrCB3 = function(json) { ltrRender(json, "ltr-box-3"); };
 
-// लोड गर्ने फंक्सन
 function ltrInit(cat1, cat2, cat3, count) {
     var cats = [cat1, cat2, cat3];
     var cbs = ['ltrCB1', 'ltrCB2', 'ltrCB3'];
@@ -38,8 +37,9 @@ function ltrInit(cat1, cat2, cat3, count) {
     for (var i = 0; i < cats.length; i++) {
         if (cats[i]) {
             var script = document.createElement('script');
+            // नेपाली युनिकोड लेबललाई चल्ने बनाउने मुख्य लाइन:
             script.src = '/feeds/posts/default/-/' + encodeURIComponent(cats[i]) + '?alt=json-in-script&callback=' + cbs[i] + '&max-results=' + count;
-            document.body.appendChild(script);
+            document.head.appendChild(script);
         }
     }
 }
