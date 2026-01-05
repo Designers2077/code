@@ -39,7 +39,7 @@ function twoColumnListPostLoader(label, containerId) {
 // Initialize the lists
 document.addEventListener("DOMContentLoaded", function() {
     // Label 'News' for first column
-    twoColumnListPostLoader('News', 'two-col-news-container');
+    twoColumnListPostLoader('news', 'two-col-news-container');
     // Label 'Economic' for second column
-    twoColumnListPostLoader('Economic', 'two-col-economic-container');
+    twoColumnListPostLoader('economic', 'two-col-economic-container');
 });
