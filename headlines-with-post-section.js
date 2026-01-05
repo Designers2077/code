@@ -1,18 +1,28 @@
+// अङ्ग्रेजी अंकलाई नेपालीमा बदल्ने फंक्सन
+function getNepaliNumber(n) {
+    var nepaliDigits = ['०', '१', '२', '३', '४', '५', '६', '७', '८', '९'];
+    return n.toString().split('').map(digit => nepaliDigits[digit]).join('');
+}
+
 function renderHeadlinesWithPost(jsonH, jsonF) {
     // १० वटा हेडलाइन लोड गर्ने
     var hPosts = jsonH.feed.entry || [];
     var hHtml = "";
     hPosts.forEach((e, index) => {
         var link = e.link.find(l => l.rel === 'alternate').href;
+        
+        // यहाँ नेपाली अंक प्रयोग गरिएको छ
+        var nepaliIndex = getNepaliNumber(index + 1);
+
         hHtml += `
             <div class="mn-list-item">
-                <div class="mn-number">${index + 1}</div>
+                <div class="mn-number">${nepaliIndex}</div>
                 <a href="${link}">${e.title.$t}</a>
             </div>`;
     });
     document.getElementById("mn-headline-list").innerHTML = hHtml;
 
-    // मुख्य समाचार लोड गर्ने
+    // मुख्य समाचार लोड गर्ने (यसमा कुनै परिवर्तन छैन)
     var fPosts = jsonF.feed.entry || [];
     if (!fPosts.length) return;
 
