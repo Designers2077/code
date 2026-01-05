@@ -32,14 +32,34 @@
 
 .mn-header-box span {
     padding: 0 15px;
-    color: #cc0000; /* रातो अक्षर */
+    color: #cc0000;
     font-size: 22px;
     font-weight: bold;
 }
 
+/* नम्बर सहितको हेडलाइन आइटम */
 .mn-list-item {
-    border-bottom: 1px solid #333; /* कालो मसिनो धर्का */
-    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+    padding: 12px 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+/* रातो गोलो घेरा भित्रको नम्बर */
+.mn-number {
+    background: #cc0000;
+    color: #fff;
+    min-width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: bold;
+    flex-shrink: 0;
+    margin-top: 2px;
 }
 
 .mn-list-item a {
@@ -47,7 +67,6 @@
     color: #333;
     font-size: 18px;
     line-height: 1.4;
-    display: block;
     font-weight: 500;
 }
 
@@ -93,9 +112,7 @@
 
 .mn-headline-container a:hover { color: #cc0000; }
 
-/* मोबाइल रेस्पोन्सिभ */
 @media (max-width: 800px) {
     .mn-headline-container { flex-direction: column; }
     .mn-main-card img { height: 220px; }
-    .mn-main-card h2 { font-size: 22px; }
 }
