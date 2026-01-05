@@ -7,15 +7,16 @@
     gap: 20px;
     font-family: 'Mukta', sans-serif;
     margin: 20px 0;
+    width: 100%;
 }
 
-/* ३ कोलमको बनावट */
+/* ३ कोलमको लागि */
 .category-column {
     flex: 1;
-    min-width: 300px; /* मोबाइलमा रेस्पोन्सिभ बनाउन */
+    min-width: 300px; /* मोबाइलमा १ कोलममा झर्नको लागि */
 }
 
-/* क्याटगरी हेडलाइन (News/Article/Opinion) */
+/* क्याटगरी हेडलाइन (Title Section) */
 .cat-header {
     display: flex;
     align-items: center;
@@ -37,24 +38,26 @@
     margin: 0 10px;
 }
 
-/* पोष्ट आइटम: फोटो बायाँ र टाइटल दायाँ */
+/* फोटो बायाँ र हेडलाइन दायाँ राख्ने मुख्य भाग */
 .post-item {
     display: flex;
-    align-items: flex-start; /* टाइटल माथिबाटै सुरु होस् */
+    flex-direction: row; /* फोटो र हेडलाइनलाई दायाँ-बायाँ राख्न */
+    align-items: center; /* उचाइको बीचमा मिलाउन */
     margin-bottom: 15px;
     gap: 12px;
+    width: 100%;
 }
 
 .post-item img {
-    width: 100px;   /* ३ कोलममा फोटो अलि सानो ठिक हुन्छ */
-    height: 70px;
+    width: 110px;      /* फोटोको चौडाई */
+    min-width: 110px;  /* फोटो खुम्चिन नदिन */
+    height: 75px;      /* फोटोको उचाई */
     object-fit: cover;
     border: 2px solid #cc0000;
     border-radius: 4px;
-    flex-shrink: 0; /* फोटोलाई नखुम्चिने बनाउन */
 }
 
-/* हेडलाइन: २० पिक्सेल, बोल्ड, २ लाइन मात्र */
+/* हेडलाइन: २०px, बोल्ड, दायाँपटी, म्याक्स २ लाइन */
 .post-item a {
     font-size: 20px;
     font-weight: bold;
@@ -62,22 +65,19 @@
     text-decoration: none;
     line-height: 1.2;
     display: -webkit-box;
-    -webkit-line-clamp: 2; /* २ लाइन भन्दा बढी नदेखाउने */
+    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
-    text-align: left; /* हेडलाइन बायाँबाटै सुरु हुने */
+    text-align: left; /* अक्षरलाई बायाँबाट सुरु गर्न */
 }
 
 .post-item a:hover {
     color: #000;
 }
 
-/* मोबाइलको लागि थप रेस्पोन्सिभ सेटिङ */
+/* मोबाइल रेस्पोन्सिभ */
 @media (max-width: 600px) {
-    .category-column { 
-        min-width: 100%; 
-    }
-    .post-item a { 
-        font-size: 19px; 
-    }
+    .category-column { min-width: 100%; }
+    .post-item a { font-size: 18px; }
+    .post-item img { width: 90px; min-width: 90px; height: 65px; }
 }
