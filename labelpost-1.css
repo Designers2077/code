@@ -1,0 +1,36 @@
+/* labelpost-1 Custom Styling */
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@400;700&display=swap');
+
+#labelpost-1-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    font-family: 'Mukta', sans-serif;
+}
+
+.lp1-main-wrapper { flex: 2; min-width: 300px; }
+.lp1-main-item img { width: 100%; height: auto; border-radius: 4px; }
+.lp1-main-title { font-size: 25px; text-align: center; margin-top: 15px; }
+
+.lp1-side-wrapper { flex: 1; display: flex; flex-direction: column; gap: 20px; min-width: 250px; }
+.lp1-side-item img { width: 100%; border-radius: 4px; }
+
+/* 2nd Post Title */
+.lp1-second-title { font-size: 20px; text-align: center; margin-top: 8px; }
+
+/* 3rd & 4th Post */
+.lp1-small-post { display: flex; align-items: center; gap: 10px; }
+.lp1-small-thumb { flex: 0 0 80px; }
+.lp1-small-thumb img { height: 80px; object-fit: cover; }
+.lp1-small-title { font-size: 15px; margin: 0; }
+
+/* Mobile Adjustments */
+@media screen and (max-width: 768px) {
+    .lp1-second-title { font-size: 18px; }
+    .lp1-small-title { font-size: 15px; }
+    #labelpost-1-container { flex-direction: column; }
+}
+
+/* Links color */
+#labelpost-1-container a { text-decoration: none; color: #333; }
+#labelpost-1-container a:hover { color: #0088ff; }
