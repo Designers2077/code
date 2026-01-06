@@ -1,0 +1,44 @@
+#labelpost-8-box { font-family: 'Mukta', sans-serif; }
+
+.lp8-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center; /* शीर्षकलाई फोटोको बीचमा राख्छ */
+    padding: 12px 0;
+    border-bottom: 1px solid #eeeeee;
+    gap: 15px;
+}
+
+.lp8-thumb {
+    flex: 0 0 130px;
+    width: 130px;
+    height: 85px;
+    overflow: hidden;
+}
+
+.lp8-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.lp8-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.lp8-title { margin: 0; padding: 0; }
+
+.lp8-title a {
+    font-size: 19px;
+    font-weight: 700;
+    color: #333;
+    line-height: 1.3;
+    text-decoration: none;
+    display: block;
+}
+
+.lp8-title a:hover { color: #d32f2f; }
