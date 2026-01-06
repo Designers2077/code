@@ -1,0 +1,58 @@
+/* labelpost-5 Style */
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@400;700&display=swap');
+
+.lp5-container-wrapper {
+    font-family: 'Mukta', sans-serif;
+    margin-bottom: 40px;
+    width: 100%;
+}
+
+/* माथिल्लो मुख्य पोस्ट */
+.lp5-main-item {
+    margin-bottom: 25px;
+}
+.lp5-main-item img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+.lp5-main-title {
+    font-size: 28px;
+    margin: 15px 0;
+    text-align: left;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+/* मुनिको ३ कोलम ग्रिड */
+.lp5-bottom-grid {
+    display: flex;
+    gap: 20px;
+}
+.lp5-small-item {
+    flex: 1;
+}
+.lp5-small-item img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+.lp5-small-title {
+    font-size: 18px;
+    margin: 10px 0;
+    line-height: 1.4;
+    font-weight: 700;
+}
+
+/* लिङ्क कलर */
+.lp5-container-wrapper a { text-decoration: none; color: #222; }
+.lp5-container-wrapper a:hover { color: #cc0000; }
+
+/* मोबाइलको लागि (Responsive) */
+@media screen and (max-width: 768px) {
+    .lp5-bottom-grid { flex-direction: column; }
+    .lp5-main-title { font-size: 22px; }
+    .lp5-main-item img { height: 250px; }
+}
