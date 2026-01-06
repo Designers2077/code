@@ -1,0 +1,79 @@
+/* Google Font Import */
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@400;700&display=swap');
+
+.blogger-featured-widget {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    font-family: 'Mukta', sans-serif;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.main-post {
+    flex: 2;
+    min-width: 300px;
+}
+
+.main-post img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.main-post h2 {
+    font-size: 25px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.side-posts {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    min-width: 250px;
+}
+
+.side-post-item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* 2nd Post Styling */
+.second-post img {
+    width: 100%;
+    height: auto;
+}
+
+.second-post h3 {
+    font-size: 20px;
+    margin: 0;
+    text-align: center;
+}
+
+/* 3rd and 4th Post (Small List style) */
+.small-post {
+    flex-direction: row !important;
+    align-items: center;
+}
+
+.small-post img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+}
+
+.small-post h3 {
+    font-size: 15px;
+    margin: 0;
+    text-align: left;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .blogger-featured-widget { flex-direction: column; }
+    .second-post h3 { font-size: 18px; }
+    .small-post h3 { font-size: 15px; }
+}
