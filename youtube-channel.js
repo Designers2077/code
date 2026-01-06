@@ -1,0 +1,59 @@
+<style>
+  /* ३-कलम ग्रिडको लागि डिजाइन */
+  .yt-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+  }
+  .yt-container {
+    width: 100%;
+  }
+  .yt-container iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 8px;
+    border: none;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+  @media (max-width: 768px) {
+    .yt-grid { grid-template-columns: 1fr; } /* मोबाइलमा एउटा मात्र देखाउने */
+  }
+</style>
+
+<div id="youtube-feed" class="yt-grid">
+  Loading videos...
+</div>
+
+<script>
+  // आफ्नो Channel ID यहाँ राख्नुहोस्
+  const channelID = "UC09hwXZEtHcScFWebDsj7cA"; 
+  
+  // ३ वटा भिडियो देखाउनको लागि
+  const videoCount = 3;
+
+  async function loadVideos() {
+    const feedURL = `https://www.youtube.com/feeds/videos.xml?channel_id=${channelID}`;
+    // RSS लाई JSON मा बदल्नको लागि एउटा फ्री API प्रयोग गरिएको छ
+    const apiURL = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(feedURL)}`;
+
+    try {
+      const response = await fetch(apiURL);
+      const data = await response.json();
+      let html = '';
+
+      for (let i = 0; i < videoCount; i++) {
+        const video = data.items[i];
+        const videoID = video.link.split('v=')[1];
+        html += `
+          <div class="yt-container">
+            <iframe src="https://www.youtube.com/embed/${videoID}" allowfullscreen></iframe>
+          </div>`;
+      }
+      document.getElementById('youtube-feed').innerHTML = html;
+    } catch (error) {
+      document.getElementById('youtube-feed').innerHTML = "भिडियो लोड हुन सकेन।";
+    }
+  }
+
+  loadVideos();
+</script>
