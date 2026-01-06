@@ -1,0 +1,76 @@
+/* labelpost-6 Style */
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@400;700&display=swap');
+
+.lp6-flex-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    font-family: 'Mukta', sans-serif;
+    color: #333;
+}
+
+.lp6-section-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #cc0000;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    text-align: center;
+    position: relative;
+}
+
+.lp6-section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    border-bottom: 2px solid #cc0000;
+}
+
+/* Left Column List */
+.lp6-left-col { flex: 1; min-width: 300px; }
+.lp6-list { list-style: none; padding: 0; margin: 0; }
+.lp6-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+.lp6-number {
+    background: #cc0000;
+    color: #fff;
+    min-width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+.lp6-list a { text-decoration: none; color: #333; font-size: 16px; line-height: 1.4; }
+
+/* Right Column Featured */
+.lp6-right-col { flex: 2; min-width: 400px; }
+.lp6-main-feat img { width: 100%; height: 350px; object-fit: cover; border-radius: 4px; }
+.lp6-main-title { font-size: 24px; margin: 15px 0; font-weight: 700; line-height: 1.3; }
+
+.lp6-sub-grid { display: flex; gap: 20px; margin-top: 20px; }
+.lp6-sub-item { flex: 1; }
+.lp6-sub-item img { width: 100%; height: 150px; object-fit: cover; border-radius: 4px; }
+.lp6-sub-title { font-size: 16px; margin: 10px 0; font-weight: 700; color: #660066; }
+
+/* Links Hover */
+.lp6-flex-row a:hover { color: #cc0000; }
+
+/* Responsive */
+@media screen and (max-width: 800px) {
+    .lp6-flex-row { flex-direction: column; }
+    .lp6-main-feat img { height: 250px; }
+    .lp6-sub-grid { flex-direction: column; }
+}
