@@ -1,0 +1,34 @@
+.lp9-grid-container {
+    display: grid;
+    grid-template-columns: 2fr 1.2fr;
+    gap: 20px;
+    font-family: 'Mukta', sans-serif;
+    margin-bottom: 30px;
+}
+
+/* मुख्य पोस्ट */
+.lp9-main img { width: 100%; height: 380px; object-fit: cover; border-radius: 4px; }
+.lp9-title-main { font-size: 25px; font-weight: 700; margin-top: 10px; line-height: 1.3; text-align: center; }
+.lp9-title-main a { color: #333; text-decoration: none; }
+
+.lp9-side-col { display: flex; flex-direction: column; gap: 15px; }
+
+/* २nd पोस्ट */
+.lp9-side-med img { width: 100%; height: 160px; object-fit: cover; border-radius: 4px; }
+.lp9-title-med { font-size: 20px; font-weight: 700; margin-top: 5px; line-height: 1.3; }
+.lp9-title-med a { color: #333; text-decoration: none; }
+
+/* ३rd र ४th पोस्ट */
+.lp9-side-small { display: flex; gap: 12px; align-items: center; border-top: 1px solid #eee; padding-top: 10px; }
+.lp9-thumb-s { flex: 0 0 100px; height: 70px; }
+.lp9-thumb-s img { width: 100%; height: 100%; object-fit: cover; border-radius: 3px; }
+.lp9-title-s { font-size: 15px; font-weight: 600; line-height: 1.3; }
+.lp9-title-s a { color: #444; text-decoration: none; }
+
+/* मोबाइलको लागि */
+@media screen and (max-width: 768px) {
+    .lp9-grid-container { grid-template-columns: 1fr; }
+    .lp9-main img { height: 250px; }
+    .lp9-title-main { font-size: 22px; }
+    .lp9-title-med { font-size: 18px; }
+}
