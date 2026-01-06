@@ -1,0 +1,37 @@
+/* labelpost-3 Custom Styling */
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@400;700&display=swap');
+
+#labelpost-3-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    font-family: 'Mukta', sans-serif;
+    color: #333;
+}
+
+.lp3-main-wrapper { flex: 2; min-width: 300px; }
+.lp3-main-item img { width: 100%; height: auto; border-radius: 4px; display: block; }
+.lp3-main-title { font-size: 25px; text-align: center; margin-top: 15px; font-weight: 700; }
+
+.lp3-side-wrapper { flex: 1; display: flex; flex-direction: column; gap: 20px; min-width: 250px; }
+.lp3-side-item img { width: 100%; border-radius: 4px; display: block; }
+
+/* 2nd Post Title (Desktop: 20px, Mobile: 18px) */
+.lp3-second-title { font-size: 20px; text-align: center; margin-top: 8px; font-weight: 700; }
+
+/* 3rd & 4th Post Title (Desktop/Mobile: 15px) */
+.lp3-small-post { display: flex; align-items: center; gap: 12px; }
+.lp3-small-thumb { flex: 0 0 80px; }
+.lp3-small-thumb img { height: 80px; width: 80px; object-fit: cover; }
+.lp3-small-title { font-size: 15px; margin: 0; line-height: 1.4; }
+
+/* Links */
+#labelpost-3-container a { text-decoration: none; color: inherit; }
+#labelpost-3-container a:hover { color: #0066cc; }
+
+/* Mobile Responsive */
+@media screen and (max-width: 768px) {
+    #labelpost-3-container { flex-direction: column; }
+    .lp3-second-title { font-size: 18px; }
+    .lp3-small-title { font-size: 15px; }
+}
