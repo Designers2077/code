@@ -1,71 +1,203 @@
+/* Labelpost 21 - Full CSS with Multi-Function Support */
 @import url('https://fonts.googleapis.com/css2?family=Mukta:wght@400;700&display=swap');
 
+/* मुख्य कन्टेनर र ब्याकग्राउन्ड */
 .lp21-wrapper {
     background: #1a472a; /* गाढा हरियो थिम */
     padding: 20px;
     border-radius: 4px;
     font-family: 'Mukta', sans-serif;
-    color: #fff;
+    color: #ffffff;
     margin-bottom: 40px;
+    box-sizing: border-box;
 }
 
+/* हेडर र नेभिगेसन बार */
 .lp21-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 10px;
 }
 
-.lp21-nav { display: flex; gap: 8px; flex-wrap: wrap; }
+.lp21-nav {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
 .lp21-nav span {
-    background: #fff;
+    background: #ffffff;
     color: #1a472a;
     padding: 4px 12px;
     border-radius: 4px;
     font-size: 14px;
     font-weight: 700;
+    cursor: pointer;
 }
 
-/* मुख्य ग्रिड */
+.lp21-header a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+/* मुख्य ३ कोलम ग्रिड */
 .lp21-top-grid {
     display: grid;
     grid-template-columns: 1.2fr 1fr 0.8fr;
+    gap: 20px;
+}
+
+/* १. पहिलो (बायाँ) ठूलो समाचार */
+.lp21-main {
+    position: relative;
+    height: 480px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.lp21-main img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.lp21-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.95));
+}
+
+.lp21-overlay h2 {
+    font-size: 25px; /* मुक्ता २५ बोल्ड */
+    margin: 0;
+    line-height: 1.3;
+    font-weight: 700;
+}
+
+/* २. बीचको समाचार (अब तस्बिर सहित) */
+.lp21-mid-box {
+    background: rgba(255,255,255,0.05);
+    padding: 15px;
+    border-radius: 4px;
+}
+
+.lp21-mid-box img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    transition: 0.3s;
+}
+
+.lp21-mid-box h2 {
+    font-size: 24px;
+    margin: 0 0 10px 0;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.lp21-mid-box p {
+    font-size: 16px;
+    line-height: 1.6;
+    opacity: 0.85;
+    margin: 0;
+}
+
+/* ३. दायाँका मध्यम समाचारहरू */
+.lp21-side {
+    display: flex;
+    flex-direction: column;
     gap: 15px;
 }
 
-.lp21-main { position: relative; height: 450px; border-radius: 4px; overflow: hidden; }
-.lp21-main img { width: 100%; height: 100%; object-fit: cover; }
-.lp21-overlay {
-    position: absolute; bottom: 0; padding: 20px;
-    background: linear-gradient(transparent, rgba(0,0,0,0.9));
+.lp21-side-card {
+    background: #ffffff;
+    border-radius: 4px;
+    overflow: hidden;
+    height: 232px;
 }
-.lp21-overlay h2 { font-size: 25px; margin: 0; line-height: 1.3; }
 
-/* बीचको विवरण भएको बक्स */
-.lp21-mid-box { background: rgba(255,255,255,0.05); padding: 20px; border-radius: 4px; }
-.lp21-mid-box h2 { font-size: 24px; margin-bottom: 15px; color: #fff; }
-.lp21-mid-box p { font-size: 16px; opacity: 0.9; line-height: 1.6; }
+.lp21-side-card img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+}
 
-/* दायाँका कार्डहरू */
-.lp21-side { display: flex; flex-direction: column; gap: 15px; }
-.lp21-side-card { background: #fff; color: #333; border-radius: 4px; overflow: hidden; height: 217px; }
-.lp21-side-card img { width: 100%; height: 130px; object-fit: cover; }
-.lp21-side-card h4 { padding: 10px; margin: 0; font-size: 16px; color: #1a472a; }
+.lp21-side-card h4 {
+    padding: 10px;
+    margin: 0;
+    font-size: 16px;
+    color: #1a472a;
+    line-height: 1.3;
+    font-weight: 700;
+}
 
-/* तलको सूची */
+/* तलको साना समाचारहरूको सूची */
 .lp21-bottom-list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 15px;
-    margin-top: 20px;
+    margin-top: 25px;
     border-top: 1px solid rgba(255,255,255,0.1);
-    padding-top: 20px;
+    padding-top: 25px;
 }
-.lp21-list-item { display: flex; gap: 10px; align-items: center; text-decoration: none; color: #fff; }
-.lp21-list-item img { width: 80px; height: 55px; object-fit: cover; border-radius: 4px; }
-.lp21-list-item h4 { font-size: 15px; margin: 0; font-weight: 400; }
 
-@media (max-width: 900px) {
-    .lp21-top-grid, .lp21-bottom-list { grid-template-columns: 1fr; }
-    .lp21-main { height: 300px; }
+.lp21-list-item {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    text-decoration: none;
+    color: #ffffff;
+    background: rgba(255,255,255,0.03);
+    padding: 8px;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+.lp21-list-item:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+.lp21-list-item img {
+    width: 90px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 4px;
+    flex-shrink: 0;
+}
+
+.lp21-list-item h4 {
+    font-size: 15px;
+    margin: 0;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+/* मोबाइल रेस्पोन्सिभ डिजाइन */
+@media (max-width: 950px) {
+    .lp21-top-grid {
+        grid-template-columns: 1fr;
+    }
+    .lp21-bottom-list {
+        grid-template-columns: 1fr 1fr;
+    }
+    .lp21-main {
+        height: 320px;
+    }
+}
+
+@media (max-width: 600px) {
+    .lp21-bottom-list {
+        grid-template-columns: 1fr;
+    }
 }
