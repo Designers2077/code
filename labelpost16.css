@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@400;700&display=swap');
+
+.lp16-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    font-family: 'Mukta', sans-serif;
+    margin-bottom: 40px;
+    width: 100%;
+}
+
+/* मुख्य समाचार भाग */
+.lp16-main {
+    flex: 2;
+    position: relative;
+    min-width: 300px;
+    height: 420px;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #000;
+}
+
+.lp16-main img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.85;
+    transition: transform 0.4s ease;
+}
+
+.lp16-main:hover img {
+    transform: scale(1.05);
+    opacity: 1;
+}
+
+.lp16-overlay {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 30px 20px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.95));
+    color: #fff;
+}
+
+.lp16-overlay h2 {
+    font-size: 25px; /* मुक्ता फन्ट २५ हेडलाइन */
+    font-weight: 700;
+    margin: 0 0 10px 0;
+    line-height: 1.3;
+}
+
+/* साइडबार समाचार भाग */
+.lp16-side {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    min-width: 280px;
+}
+
+.lp16-item {
+    display: flex;
+    gap: 12px;
+    text-decoration: none;
+    color: #222;
+    border-bottom: 1px solid #f1f1f1;
+    padding-bottom: 12px;
+}
+
+.lp16-item img {
+    width: 115px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.lp16-item h4 {
+    margin: 0;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #333;
+}
+
+/* घडी र मिति (भर्खरै) */
+.lp16-meta {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    color: #888;
+    margin-top: 6px;
+}
+
+.lp16-meta svg {
+    width: 14px;
+    height: 14px;
+    fill: #FF9F55;
+}
+
+/* थप समाचार बटन */
+.lp16-more-btn {
+    display: block;
+    text-align: center;
+    background: #FF9F55;
+    color: #fff !important;
+    padding: 12px;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 6px;
+    margin-top: 5px;
+    font-size: 16px;
+}
+
+/* मोबाइलको लागि डिजाइन */
+@media (max-width: 768px) {
+    .lp16-container { flex-direction: column; }
+    .lp16-main { height: 280px; }
+    .lp16-overlay h2 { font-size: 22px; }
+}
