@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@400;700&display=swap');
+
+.lp17-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    font-family: 'Mukta', sans-serif;
+    margin-bottom: 40px;
+    width: 100%;
+}
+
+/* मुख्य समाचार कार्ड - निलो ब्याकग्राउन्ड */
+.lp17-main-card {
+    display: flex;
+    flex: 2;
+    min-width: 320px;
+    background: #003366; /* गाढा निलो ब्याकग्राउन्ड */
+    border-radius: 12px;
+    overflow: hidden;
+    height: 420px;
+}
+
+.lp17-main-img {
+    flex: 1.2;
+    overflow: hidden;
+}
+
+.lp17-main-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.4s;
+}
+
+.lp17-main-content {
+    flex: 1;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #ffffff; /* सेतो अक्षर */
+}
+
+.lp17-main-content h2 {
+    font-size: 25px; /* मुक्ता २५ बोल्ड */
+    font-weight: 700;
+    margin: 0 0 15px 0;
+    line-height: 1.3;
+    color: #ffffff;
+}
+
+.lp17-main-content p {
+    font-size: 16px;
+    color: #e0e0e0;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+/* साइडबार लेआउट */
+.lp17-side {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    min-width: 280px;
+}
+
+.lp17-item {
+    display: flex;
+    gap: 12px;
+    text-decoration: none;
+    color: #222;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 12px;
+}
+
+.lp17-item img {
+    width: 110px;
+    height: 75px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.lp17-item h4 {
+    margin: 0;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.lp17-meta {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    color: #888;
+    margin-top: 5px;
+}
+
+/* आइकनको रङ */
+.lp17-meta svg { width: 14px; height: 14px; fill: #FF9F55; }
+.lp17-main-content .lp17-meta { color: #ddd; }
+.lp17-main-content .lp17-meta svg { fill: #ffffff; }
+
+.lp17-more-btn {
+    display: block;
+    text-align: center;
+    background: #FF9F55;
+    color: #fff !important;
+    padding: 12px;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 8px;
+}
+
+/* मोबाइलको लागि */
+@media (max-width: 768px) {
+    .lp17-main-card { flex-direction: column; height: auto; }
+    .lp17-container { flex-direction: column; }
+}
