@@ -1,6 +1,6 @@
 async function getWeather() {
     const city = "Birgunj";
-    const apiKey = "6035607315a6b093375c32439c1482f3"; 
+    const apiKey = "9c17c4095ee2a4042c26bbd4d4de1726"; 
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
 
     try {
