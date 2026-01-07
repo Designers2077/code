@@ -1,0 +1,93 @@
+/* Ratopati Style Header - header-1.css */
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@400;600;700&display=swap');
+
+:root {
+    --rp-red: #e31e24;
+    --rp-dark-red: #c1181d;
+    --rp-white: #ffffff;
+    --rp-gray: #f8f9fa;
+    --rp-text: #333333;
+}
+
+.header-1-wrapper {
+    width: 100%;
+    font-family: 'Mukta', sans-serif;
+    background: #fff;
+}
+
+.h1-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+}
+
+/* Top Bar */
+.h1-top-bar {
+    background: var(--rp-gray);
+    border-bottom: 1px solid #eeeeee;
+    padding: 6px 0;
+    font-size: 14px;
+    color: #666;
+}
+.h1-top-bar .h1-container {
+    justify-content: space-between;
+}
+
+/* Middle Bar (Logo Section) */
+.h1-middle-bar {
+    padding: 15px 0;
+}
+.h1-middle-bar .h1-container {
+    justify-content: center; /* लोगो बीचमा राख्न */
+}
+.h1-logo img {
+    max-height: 70px;
+    width: auto;
+}
+
+/* Sticky Navigation */
+.h1-nav-bar {
+    background: var(--rp-red);
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.h1-menu {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    overflow-x: auto;
+    scrollbar-width: none; /* Firefox */
+}
+.h1-menu::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+.h1-menu li a {
+    color: var(--rp-white);
+    padding: 14px 18px;
+    display: block;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 17px;
+    white-space: nowrap;
+    transition: background 0.2s;
+}
+.h1-menu li a:hover, .h1-menu li.active a {
+    background: var(--rp-dark-red);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .h1-top-bar { display: none; }
+    .h1-middle-bar { padding: 10px 0; }
+    .h1-logo img { max-height: 50px; }
+    .h1-menu li a {
+        padding: 12px 15px;
+        font-size: 15px;
+    }
+}
