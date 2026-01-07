@@ -46,7 +46,8 @@
 
 .lp18-big-info h2 {
     font-size: 25px; /* मुक्ता २५ बोल्ड हेडलाइन */
-    font-weight: 700;
+    font-weight: 800;
+    color: #ffffff;
     margin: 0;
     line-height: 1.3;
 }
