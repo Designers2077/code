@@ -1,0 +1,63 @@
+/* Ratopati Style Header v2 - header-2.css */
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;600;700&display=swap');
+
+:root {
+    --rp-red: #e31e24;
+    --rp-dark-red: #b31419;
+    --rp-white: #ffffff;
+    --rp-text: #333333;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Mukta', sans-serif; }
+
+.h2-container { max-width: 1240px; margin: 0 auto; padding: 0 15px; }
+
+/* Mobile Top Bar (Red with Games/Unicode) */
+.h2-top-mini { background: var(--rp-dark-red); color: #fff; padding: 5px 0; font-size: 13px; }
+.h2-top-mini-flex { display: flex; justify-content: flex-end; gap: 15px; }
+.h2-top-mini-flex span { cursor: pointer; display: flex; align-items: center; gap: 5px; }
+
+/* Branding Section */
+.h2-branding { background: var(--rp-red); padding: 10px 0; color: #fff; }
+.h2-brand-flex { display: flex; justify-content: space-between; align-items: center; }
+
+/* Hamburger and Date */
+.h2-brand-left { display: flex; align-items: center; gap: 15px; }
+.h2-menu-icon { font-size: 24px; cursor: pointer; }
+.h2-date-box { line-height: 1.2; font-size: 14px; }
+
+/* Logo - White in Mobile */
+.h2-logo img { max-height: 55px; filter: brightness(0) invert(1); transition: 0.3s; }
+
+/* Right Action Icons */
+.h2-brand-right { display: flex; align-items: center; gap: 15px; font-size: 18px; }
+.h2-lang { border: 1px solid #fff; padding: 2px 8px; border-radius: 20px; font-size: 14px; font-weight: bold; }
+
+/* Desktop Navigation (White Background) */
+.h2-nav-bar { background: #fff; border-bottom: 2px solid var(--rp-red); position: sticky; top: 0; z-index: 1000; }
+.h2-nav-flex { display: flex; align-items: center; justify-content: space-between; }
+.h2-main-menu { list-style: none; display: flex; overflow-x: auto; scrollbar-width: none; }
+.h2-main-menu::-webkit-scrollbar { display: none; }
+.h2-main-menu li a { display: block; padding: 12px 14px; color: #333; text-decoration: none; font-weight: 700; font-size: 17px; white-space: nowrap; }
+.h2-main-menu li a:hover { color: var(--rp-red); }
+.h2-home-icon { color: var(--rp-red) !important; font-size: 20px; }
+
+/* Right Buttons (Patro/Radio) */
+.h2-nav-btns { display: flex; gap: 10px; align-items: center; }
+.btn-p { background: #8b2024; color: #fff !important; padding: 5px 12px !important; border-radius: 5px; }
+.btn-r { background: var(--rp-red); color: #fff !important; padding: 5px 12px !important; border-radius: 5px; }
+
+/* Desktop Media Query */
+@media (min-width: 992px) {
+    .h2-branding { background: #fff; color: #333; border-bottom: 1px solid #eee; }
+    .h2-logo img { filter: none; max-height: 80px; }
+    .h2-top-mini { background: #fff; color: #555; border-bottom: 1px solid #eee; }
+    .h2-brand-left { color: #333; }
+}
+
+@media (max-width: 768px) {
+    .h2-nav-btns, .h2-nav-bar { display: none; } /* Mobile hides desktop nav by default, usually shows slider */
+    .h2-main-menu { display: flex; background: #fff; border-top: 1px solid #eee; }
+    .h2-nav-bar { display: block; position: static; }
+}
