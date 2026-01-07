@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@400;700&display=swap');
+
+.lp18-wrapper {
+    background: #6b7e46; /* तस्बिर १९ जस्तै हरियो रङ */
+    padding: 20px;
+    border-radius: 8px;
+    font-family: 'Mukta', sans-serif;
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+.lp18-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    padding-bottom: 10px;
+}
+
+.lp18-header h3 { font-size: 28px; margin: 0; font-weight: 700; }
+
+.lp18-content {
+    display: grid;
+    grid-template-columns: 1.5fr 1.5fr 1fr;
+    gap: 15px;
+}
+
+/* ठूला पोस्टहरू */
+.lp18-big {
+    position: relative;
+    height: 350px;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.lp18-big img { width: 100%; height: 100%; object-fit: cover; transition: 0.4s; }
+.lp18-big:hover img { transform: scale(1.05); }
+
+.lp18-big-info {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 15px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.85));
+}
+
+.lp18-big-info h2 {
+    font-size: 25px; /* मुक्ता २५ बोल्ड हेडलाइन */
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.3;
+}
+
+/* साइडबार */
+.lp18-side {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.lp18-item {
+    display: flex;
+    gap: 10px;
+    text-decoration: none;
+    color: #fff;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 10px;
+}
+
+.lp18-item img { width: 85px; height: 60px; object-fit: cover; border-radius: 4px; }
+
+.lp18-item h4 { margin: 0; font-size: 16px; font-weight: 400; line-height: 1.3; }
+
+/* मोबाइल रेस्पोन्सिभ */
+@media (max-width: 900px) {
+    .lp18-content { grid-template-columns: 1fr; }
+    .lp18-big { height: 260px; }
+}
