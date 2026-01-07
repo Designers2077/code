@@ -18,18 +18,19 @@ function labelpost21(json) {
         </div>
         <div class="lp21-top-grid">`;
 
-    // १. मुख्य ठूलो तस्बिर समाचार
+    // १. पहिलो पोष्ट - जसमा ठूलो फिचर इमेज हुन्छ
     var f = entries[0];
+    var fImg = f.media$thumbnail ? f.media$thumbnail.url.replace('s72-c','s1600') : 'https://via.placeholder.com/600x450';
     html += `<div class="lp21-main">
         <a href="${f.link.find(l=>l.rel==='alternate').href}">
-            <img src="${f.media$thumbnail.url.replace('s72-c','s1600')}">
+            <img src="${fImg}">
             <div class="lp21-overlay"><h2>${f.title.$t}</h2></div>
         </a>
     </div>`;
 
-    // २. बीचको विवरण समाचार
+    // २. दोस्रो पोष्ट - जसमा इमेज हुँदैन, टाइटल र विवरण मात्र हुन्छ
     var m = entries[1] || f;
-    var summary = m.summary ? m.summary.$t.substring(0, 180) + "..." : "";
+    var summary = m.summary ? m.summary.$t.replace(/<[^>]*>?/gm, '').substring(0, 220) + "..." : (m.content ? m.content.$t.replace(/<[^>]*>?/gm, '').substring(0, 220) + "..." : "");
     html += `<div class="lp21-mid-box">
         <a href="${m.link.find(l=>l.rel==='alternate').href}" style="color:inherit;text-decoration:none;">
             <h2>${m.title.$t}</h2>
@@ -37,13 +38,14 @@ function labelpost21(json) {
         </a>
     </div>`;
 
-    // ३. दायाँका २ वटा कार्डहरू
+    // ३. दायाँका पोष्टहरू - जसमा तस्बिर र टाइटल दुवै हुन्छ
     html += `<div class="lp21-side">`;
     for(var i=2; i<4; i++) {
         if(entries[i]) {
+            var sImg = entries[i].media$thumbnail ? entries[i].media$thumbnail.url.replace('s72-c','s600') : 'https://via.placeholder.com/300x200';
             html += `<div class="lp21-side-card">
                 <a href="${entries[i].link.find(l=>l.rel==='alternate').href}" style="text-decoration:none;">
-                    <img src="${entries[i].media$thumbnail.url.replace('s72-c','s600')}">
+                    <img src="${sImg}">
                     <h4>${entries[i].title.$t}</h4>
                 </a>
             </div>`;
@@ -51,10 +53,11 @@ function labelpost21(json) {
     }
     html += `</div></div><div class="lp21-bottom-list">`;
 
-    // ४. तलका साना समाचारहरू
+    // ४. तलका साना पोष्टहरूको सूची
     for(var j=4; j<entries.length; j++) {
+        var lImg = entries[j].media$thumbnail ? entries[j].media$thumbnail.url.replace('s72-c','s200') : 'https://via.placeholder.com/100x70';
         html += `<a href="${entries[j].link.find(l=>l.rel==='alternate').href}" class="lp21-list-item">
-            <img src="${entries[j].media$thumbnail.url.replace('s72-c','s200')}">
+            <img src="${lImg}">
             <h4>${entries[j].title.$t}</h4>
         </a>`;
     }
