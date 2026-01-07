@@ -4,18 +4,16 @@ async function getWeather() {
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
 
     try {
-      const response = await fetch(url);
-      const data = await response.json();
-      
-      document.getElementById('temp').innerHTML = Math.round(data.main.temp) + "°C";
-      document.getElementById('description').innerHTML = data.weather[0].description;
-      const iconCode = data.weather[0].icon;
-      document.getElementById('icon').innerHTML = `<img src="https://openweathermap.org/img/wn/${iconCode}.png" alt="Weather Icon">`;
+        const response = await fetch(url);
+        if (!response.ok) throw new Error("Network issue");
+        const data = await response.json();
+        
+        document.getElementById('temp').innerText = Math.round(data.main.temp) + "°C";
+        document.getElementById('description').innerText = data.weather[0].description;
+        const iconCode = data.weather[0].icon;
+        document.getElementById('icon').innerHTML = `<img src="https://openweathermap.org/img/wn/${iconCode}@2x.png" alt="icon">`;
     } catch (error) {
-      console.error("Error fetching weather:", error);
-      document.getElementById('description').innerHTML = "Unable to load";
+        document.getElementById('description').innerText = "Error loading weather";
     }
 }
-
-// विजेट लोड भएपछि फङ्सन कल गर्ने
-document.addEventListener("DOMContentLoaded", getWeather);
+getWeather(); // सिधै कल गर्ने
