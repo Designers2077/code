@@ -1,77 +1,190 @@
+/* Labelpost 20 - Full CSS */
 @import url('https://fonts.googleapis.com/css2?family=Mukta:wght@400;700&display=swap');
 
+/* मुख्य कन्टेनर */
 .lp20-wrapper {
-    background: #2d0a1a; /* तस्बिर २२ मा देखिएको गाढा रङ */
+    background: #2d0a1a; /* तस्बिर २२ मा देखिएको गाढा बैजनी/कलेजी रङ */
     padding: 20px;
     border-radius: 8px;
     font-family: 'Mukta', sans-serif;
-    color: #fff;
+    color: #ffffff;
     margin-bottom: 40px;
+    box-sizing: border-box;
 }
 
+/* हेडर सेक्सन (Title and Navigation) */
 .lp20-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 10px;
 }
 
-.lp20-header h3 { font-size: 28px; margin: 0; color: #fff; }
+.lp20-header h3 {
+    font-size: 28px;
+    margin: 0;
+    font-weight: 700;
+    color: #ffffff;
+}
 
-.lp20-nav { display: flex; gap: 10px; }
+.lp20-nav {
+    display: flex;
+    gap: 10px;
+}
+
 .lp20-nav span {
-    background: #fff;
-    color: #333;
-    padding: 5px 15px;
+    background: #ffffff;
+    color: #333333;
+    padding: 4px 12px;
     border-radius: 4px;
     font-size: 14px;
+    font-weight: 700;
     cursor: pointer;
+    transition: 0.3s;
 }
 
-/* मुख्य ग्रिड लेआउट */
+.lp20-nav span:hover {
+    background: #eeeeee;
+}
+
+/* मुख्य ग्रिड लेआउट (२ कोलम) */
 .lp20-grid {
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: 15px;
 }
 
+/* मुख्य ठूलो समाचार कार्ड */
 .lp20-main-post {
     position: relative;
     height: 400px;
     border-radius: 6px;
     overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
-.lp20-main-post img, .lp20-side-post img, .lp20-bottom-post img {
-    width: 100%; height: 100%; object-fit: cover;
+.lp20-main-post img, 
+.lp20-side-post img, 
+.lp20-bottom-post img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: 0.5s ease;
 }
 
+/* होभर गर्दा तस्बिर जुम हुने इफेक्ट */
+.lp20-main-post:hover img, 
+.lp20-side-post:hover img {
+    transform: scale(1.08);
+}
+
+/* ग्रेडियन्ट ओभरले र हेडलाइन स्टाइल */
 .lp20-overlay {
     position: absolute;
-    bottom: 0; left: 0; right: 0;
-    padding: 20px;
-    background: linear-gradient(transparent, rgba(0,0,0,0.9));
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 25px 20px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.95));
+    color: #ffffff;
 }
 
-.lp20-overlay h2 { font-size: 25px; margin: 0; line-height: 1.3; }
+.lp20-overlay h2 {
+    font-size: 25px; /* मुक्ता २५ बोल्ड हेडलाइन */
+    margin: 0;
+    line-height: 1.3;
+    font-weight: 700;
+}
 
-/* साइड पोस्टहरू */
-.lp20-side { display: flex; flex-direction: column; gap: 15px; }
-.lp20-side-post { position: relative; height: 192.5px; border-radius: 6px; overflow: hidden; }
-.lp20-side-post h4 { font-size: 17px; margin: 0; }
+/* साइडका २ वटा समाचारहरू */
+.lp20-side {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
 
-/* तलका साना पोस्टहरू */
+.lp20-side-post {
+    position: relative;
+    height: 192.5px;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.lp20-side-post h4 {
+    font-size: 17px;
+    margin: 0;
+    line-height: 1.3;
+    font-weight: 700;
+}
+
+/* तलका ३ वटा साना समाचारहरू */
 .lp20-bottom {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 15px;
-    margin-top: 15px;
+    margin-top: 20px;
 }
-.lp20-bottom-post { display: flex; gap: 10px; align-items: center; }
-.lp20-bottom-post .thumb { width: 100px; height: 70px; flex-shrink: 0; border-radius: 4px; overflow: hidden; }
-.lp20-bottom-post h4 { font-size: 16px; margin: 0; font-weight: 400; line-height: 1.3; }
 
-@media (max-width: 800px) {
-    .lp20-grid, .lp20-bottom { grid-template-columns: 1fr; }
-    .lp20-main-post { height: 250px; }
+.lp20-bottom-post {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    text-decoration: none;
+    background: rgba(255,255,255,0.05);
+    padding: 8px;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.lp20-bottom-post:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+.lp20-bottom-post .thumb {
+    width: 110px;
+    height: 75px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.lp20-bottom-post h4 {
+    font-size: 16px;
+    margin: 0;
+    font-weight: 400;
+    line-height: 1.3;
+    color: #ffffff;
+}
+
+/* थप समाचार लिङ्क (Top Right) */
+.lp20-more-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.lp20-more-link:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+/* मोबाइल रेस्पोन्सिभ डिजाइन (Mobile Friendly) */
+@media (max-width: 850px) {
+    .lp20-grid {
+        grid-template-columns: 1fr;
+    }
+    .lp20-bottom {
+        grid-template-columns: 1fr;
+    }
+    .lp20-main-post {
+        height: 280px;
+    }
+    .lp20-side-post {
+        height: 220px;
+    }
 }
