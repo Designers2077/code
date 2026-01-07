@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@400;700&display=swap');
+
+.lp19-wrapper {
+    background: #2d1b3d; /* तस्बिरमा देखिएको गाढा बैजनी रङ */
+    padding: 20px;
+    border-radius: 4px;
+    font-family: 'Mukta', sans-serif;
+    color: #fff;
+    margin-bottom: 40px;
+}
+
+.lp19-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 10px;
+}
+
+.lp19-header h3 { 
+    font-size: 30px; 
+    margin: 0; 
+    font-weight: 700; 
+    color: #fff;
+}
+
+.lp19-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+/* मुख्य २ पोर्ट्रेट पोस्टहरू */
+.lp19-featured {
+    position: relative;
+    height: 480px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.lp19-featured img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+.lp19-featured:hover img { transform: scale(1.05); }
+
+.lp19-overlay {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 30px 15px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.95));
+}
+
+.lp19-overlay h2 {
+    font-size: 25px; /* मुक्ता २५ बोल्ड पोस्ट टाइटल */
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.3;
+    color: #fff;
+}
+
+/* साइडबार ३ ल्यान्डस्केप पोस्टहरू */
+.lp19-side {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.lp19-side-item {
+    position: relative;
+    height: 150px;
+    border-radius: 4px;
+    overflow: hidden;
+    text-decoration: none;
+}
+
+.lp19-side-item img { width: 100%; height: 100%; object-fit: cover; }
+
+.lp19-side-overlay {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 10px;
+    background: rgba(0,0,0,0.7);
+}
+
+.lp19-side-overlay h4 {
+    color: #fff;
+    font-size: 17px;
+    margin: 0;
+    line-height: 1.3;
+}
+
+@media (max-width: 900px) {
+    .lp19-content { grid-template-columns: 1fr; }
+    .lp19-featured { height: 350px; }
+}
