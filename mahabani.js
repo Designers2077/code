@@ -7,6 +7,6 @@ const targetBlog = "https://thedesigners7.blogspot.com/";
 const script = document.createElement('script');
 
 // यहाँ 'targetBlog' थपिएको छ जसले गर्दा अन्य ब्लगको फिड तानिन्छ
-script.src = targetBlog + "/feeds/posts/default?alt=json-in-script&max-results=5&callback=setupNews";
+script.src = targetBlog + "/feeds/posts/default?alt=json-in-script&max-results=20&callback=setupNews";
 
 document.body.appendChild(script);
